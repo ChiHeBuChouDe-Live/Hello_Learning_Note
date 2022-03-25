@@ -1,3 +1,4 @@
 # 一行代表一条忽略规则
 _pycache_/
 .idea/
+ll_env/
