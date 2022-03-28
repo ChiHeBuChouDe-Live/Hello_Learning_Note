@@ -15,3 +15,16 @@ class Topic(models.Model):
         当使用print输出对象的时候，只要自己定义了__str__(self)方法，那么就会打印从在这个方法中return的数据
         """
         return self.text
+
+
+class Entry(models.Model):
+    """学习到有关某个主题的具体知识"""
+    topic = models.ForeignKey(Topic, models.CASCADE)
+    text = models.TextField()
+    data_added = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name_plural = 'entries'
+
+    def __str__(self):
+        return self.text[:50]+"..."
