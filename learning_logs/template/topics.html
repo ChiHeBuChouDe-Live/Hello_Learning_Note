@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+  <p>Topics</p>
+    <ul>
+      {% for topic in topics %}
+{#          返回与给定视图及其参数匹配的绝对 URL。#}
+          <li><a href="{% url 'topic' topic.id %}">{{ topic }}</a></li>
+      {% empty %}
+        <li>No topics have been added yet.</li>
+      {% endfor %}
+    </ul>
+{% endblock content %}
