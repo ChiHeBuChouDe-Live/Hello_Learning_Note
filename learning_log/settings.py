@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# 我的设置
+LOGIN_URL = '/users/login/'
 
 # Application definition
 
@@ -38,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'learning_logs',  # 我的应用程序
+    'users'
 ]
 
 MIDDLEWARE = [
@@ -55,7 +58,7 @@ ROOT_URLCONF = 'learning_log.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR / 'learning_logs', 'template')],
+        'DIRS': [os.path.join(BASE_DIR / 'learning_logs', 'template'), os.path.join(BASE_DIR / 'users', 'template')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

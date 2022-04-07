@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 # https://docs.djangoproject.com/en/1.8/ref/models/fields/ 模型字段参考
@@ -8,6 +9,7 @@ class Topic(models.Model):
     """用户学习的主题"""
     text = models.CharField(max_length=200)     # text由字符或文本组成的数据,并数据库中预留多少空间(200个字符)
     date_added = models.DateTimeField(auto_now_add=True)    # 记录日期和时间的数据 每当用户创建新主题时，这都让Django将这个属性自动设置成当前日期和时间
+    owner = models.ForeignKey(User, models.CASCADE)
 
     def __str__(self):
         """
