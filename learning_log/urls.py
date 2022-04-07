@@ -20,4 +20,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('learning_logs.app_urls.homepage')),
     path('topics/', include('learning_logs.app_urls.topics')),
+    path('new_topic/', include('learning_logs.app_urls.new_topic')),
+    path('new_entry/', include('learning_logs.app_urls.new_entry')),
+    path('edit_entry/', include('learning_logs.app_urls.edit_entry')),
 ]
