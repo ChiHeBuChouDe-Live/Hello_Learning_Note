@@ -25,10 +25,14 @@ SECRET_KEY = 'django-insecure-jb0ui*@(31gxsft_z6o3w5toe$42=i7oa7!c0^xs@9f)-bfg8)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
-# 我的设置
+# 我的设置, 让django查找到登陆界面
 LOGIN_URL = '/users/login/'
+# django-bootstrap3的设置,无需手工下载jQuery并将其放到正确的地方
+BOOTSTRAP4 = {
+    'include_jquery': True
+}
 
 # Application definition
 
@@ -40,7 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'learning_logs',  # 我的应用程序
-    'users'
+    'users',
+    'bootstrap3',  # 第三方应用程序
 ]
 
 MIDDLEWARE = [
@@ -107,9 +112,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-hans'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
