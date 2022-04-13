@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-jb0ui*@(31gxsft_z6o3w5toe$42=i7oa7!c0^xs@9f)-bfg8)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -63,7 +63,9 @@ ROOT_URLCONF = 'learning_log.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR / 'learning_logs', 'template'), os.path.join(BASE_DIR / 'users', 'template')],
+        'DIRS': [os.path.join(BASE_DIR / 'learning_logs', 'template'),
+                 os.path.join(BASE_DIR / 'users', 'template'),
+                 os.path.join(BASE_DIR / 'learning_log', 'template')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
